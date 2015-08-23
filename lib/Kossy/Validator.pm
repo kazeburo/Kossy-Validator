@@ -16,6 +16,7 @@ our %VALIDATOR = (
     },
     CHOICE => sub {
         my ($req, $val, @args) = @_;
+        return if not defined($val);
         for my $c (@args) {
             if ($c eq $val) {
                 return 1;
